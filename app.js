@@ -34,8 +34,10 @@ app.use("/api/sales", saleRoutes);
 // Start the server
 const PORT = process.env.PORT || 3000;
 
+const uri= "mongodb+srv://nerellamanojkumar:skkQBByIqa9VWtZ0@cluster1.aqbnk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
+
 mongoose
-  .connect("mongodb://localhost:27017/survey")
+  .connect(uri, {dbName: "survey-heart"})
   .then(() => {
     console.log("database connected");
   })
